@@ -1,5 +1,5 @@
 import React              from 'react';
-import path               from 'path';
+import path               from 'path-browserify';
 import IconBroken         from '@material-ui/icons/BrokenImage';
 import Button             from '@material-ui/core/Button';
 import FormItemWrapper    from './shared/FormItemWrapper';
@@ -73,7 +73,7 @@ class ImageSelectDynamic extends BaseDynamic {
 
   }
 
-  normalizeState({state, field, stateBuilder}){
+  normalizeState({state, field /*, stateBuilder */}){
     let key = field.key;
     if(state[key]===undefined){
       state[key] = field.default || undefined;
@@ -195,7 +195,7 @@ class ImageSelectDynamic extends BaseDynamic {
       return (null);
     }
 
-    if (typeof field.buttonTitle !== 'string' || !field.buttonTitle instanceof String){
+    if (typeof field.buttonTitle !== 'string' || !(field.buttonTitle instanceof String)){
       field.buttonTitle="Select Image";
     }
 

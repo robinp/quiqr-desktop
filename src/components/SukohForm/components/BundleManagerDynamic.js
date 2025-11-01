@@ -7,7 +7,7 @@ import FolderIcon                           from '@material-ui/icons/Folder';
 import IconButton                           from '@material-ui/core/IconButton';
 import DeleteIcon                           from '@material-ui/icons/Delete';
 import { BaseDynamic }                      from '../../HoForm';
-import path                                 from 'path';
+import path                                 from 'path-browserify';
 import service                              from '../../../services/service';
 
 const regExtractExt = /[.]([^.]+)$/
@@ -32,7 +32,7 @@ class BundleManagerDynamic extends BaseDynamic {
     fieldExtender.extendFields(field.fields);
   }
 
-  buildPathFragment(node, nodeLevel, nodes) {
+  buildPathFragment(/*node, nodeLevel, nodes*/) {
     return undefined;
   }
 
@@ -88,7 +88,7 @@ class BundleManagerDynamic extends BaseDynamic {
     }
   }
 
-  normalizeState({state, field, stateBuilder}){
+  normalizeState({state, field /*, stateBuilder*/}){
 
     if(!Array.isArray(state['resources'])){
       state['resources'] = [];
@@ -114,7 +114,7 @@ class BundleManagerDynamic extends BaseDynamic {
     return rootState;
  }
 
-  onButtonClick(e){
+  onButtonClick(/*e*/){
 
     let {context} = this.props;
     let {field} = context.node;

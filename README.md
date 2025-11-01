@@ -190,11 +190,7 @@ Install npm dependancies..
 npm install
 ```
 
-Get latest embgit..
-
-```
-npm run _pack_embgit
-```
+Note: Don't need to manually get latest embgit, the flake already makes it available.
 
 Start electron with a single command.
 
